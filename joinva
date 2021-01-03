@@ -1,0 +1,84 @@
+#!/usr/bin/python
+from tkinter import Tk
+from tkinter import X
+from tkinter import END
+from tkinter import Button
+from tkinter import Entry
+from tkinter import Label
+from tkinter import StringVar
+from tkinter import filedialog
+from os import system
+from os import getcwd
+from os.path import split
+
+def get_video():
+    videoEntry.delete(0,END)
+    outputFileEntry.delete(0,END)
+    videoFile = filedialog.askopenfilename()
+    videoEntry.insert(0,videoFile)
+    head, tail = split(videoFile)
+    outputFileVar.set('joined_'+tail)
+
+def get_audio():
+    audioEntry.delete(0,END)
+    audioFile = filedialog.askopenfilename()
+    audioEntry.insert(0,audioFile)
+
+def set_folder():
+    outputFolderEntry.delete(0,END)
+    outputFolder = filedialog.askdirectory()
+    outputFolderEntry.insert(0,outputFolder)
+
+def quit():
+    root.destroy()
+
+root = Tk()
+
+videoFileVar = StringVar()
+audioFileVar = StringVar()
+outputFolderVar = StringVar()
+outputFileVar = StringVar()
+
+video = Button(root,text='Select Video',command=get_video)
+video.pack(fill=X)
+
+videoEntry = Entry(root,textvariable=videoFileVar)
+videoEntry.pack(fill=X)
+
+audio = Button(root,text='Select Audio',command=get_audio)
+audio.pack(fill=X)
+
+audioEntry = Entry(root,textvariable=audioFileVar)
+audioEntry.pack(fill=X)
+
+outputFolder = Button(root,text='Save in',command=set_folder)
+outputFolder.pack(fill=X)
+
+outputFolderEntry = Entry(root,textvariable=outputFolderVar)
+outputFolderEntry.pack(fill=X)
+
+outputFileLabel = Label(root,text='New file name:')
+outputFileLabel.pack(fill=X)
+
+outputFileEntry = Entry(root,textvariable=outputFileVar)
+outputFileEntry.pack(fill=X)
+
+joinva = Button(root,text='Join Video & Audio',command=quit)
+joinva.pack(fill=X)
+
+outputFolderEntry.insert(0,getcwd())
+
+root.mainloop()
+
+videoName = videoFileVar.get()
+audioName = audioFileVar.get()
+outputFolderName = outputFolderVar.get()
+outputName = outputFileVar.get()
+
+system(f'ffmpeg -i "{videoName}" -i "{audioName}" -c copy "{outputFolderName+"/"+outputName}"')
+
+
+
+
+
+
