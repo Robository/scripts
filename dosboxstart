@@ -1,0 +1,5 @@
+#!/bin/python
+from sys import argv as GET
+from os import system as OS
+getGame = GET[1]
+OS(f'dosbox -conf ~/.dosbox/"{getGame}.conf"')
