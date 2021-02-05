@@ -1,0 +1,116 @@
+[colors]
+black = #000
+white = #fff
+grey  = #777
+red   = #bd2c40
+
+[bar/example]
+monitor = ${env:MONITOR:DVI-D-0}
+font-0  = DejaVu Sans Mono:pixelsize=10
+font-1  = DejaVu Sans Mono Nerd Font Mono:pixelsize=20;3
+
+width = 100%
+height = 27
+fixed-center = false
+
+modules-left    = i3
+modules-center  = xwindow
+modules-right   = alsa xkeyboard memory cpu eth temperature date
+
+module-margin-right = 2
+
+;label-active      = %token%
+;label-active-font = 1
+
+cursor-click = pointer
+enable-ipc   = true
+
+[module/i3]
+type   = internal/i3
+format = <label-state> <label-mode>
+index-sort = true
+wrapping-scroll = false
+
+label-mode-padding      = 2
+label-focused-padding   = 2
+label-unfocused-padding = 2
+label-visible-padding   = 2
+
+label-focused   = %index% %icon%
+label-unfocused = %index% %icon%
+label-visible   = %index% %icon%
+label-separator = |
+
+ws-icon-0 = 1;term
+ws-icon-1 = 2;net
+ws-icon-2 = 3;files
+ws-icon-default = x
+
+[module/cpu]
+type          = internal/cpu
+interval      = 2
+format-prefix = " "
+label         = %percentage%%
+format-prefix-foreground = ${colors.grey}
+
+[module/memory]
+type          = internal/memory
+interval      = 5
+format-prefix = " "
+format        = <label>
+label         = %gb_used%/%gb_free%
+format-prefix-foreground = ${colors.grey}
+
+[module/eth]
+type      = internal/network
+interface = enp5s0
+interval  = 30
+label-connected         = %ifname%
+format-connected-prefix = " "
+format-disconnected     = <label-disconnected>
+label-disconnected      = " disconnected"
+format-connected-prefix-foreground = ${colors.grey}
+label-disconnected-foreground = ${colors.red}
+
+[module/xkeyboard]
+type          = internal/xkeyboard
+blacklist-0   = num lock
+format-prefix = " "
+label-layout  = %layout%
+format-prefix-foreground = ${colors.grey}
+
+[module/alsa]
+type          = internal/alsa
+format-volume = <bar-volume>
+;label-volume            = "墳 "
+format-muted-prefix     = "婢 "
+label-muted = sound muted
+;format-muted-foreground = ${colors.red}
+bar-volume-width = 10
+bar-volume-foreground-0 = ${colors.grey}
+bar-volume-empty-foreground = ${colors.grey}
+bar-volume-gardient = false
+bar-volume-indicator = 
+bar-volume-fill      = 
+bar-volume-empty     = 
+
+[module/xwindow]
+type  = internal/xwindow
+label = %title:0:120:...%
+
+[module/temperature]
+type             = internal/temperature
+thermal-zone     = 0
+warn-temperature = 70
+;label-warn-temperature = ${colors.red}
+format           = <ramp> <label>
+label            = %temperature-c%
+ramp-0           = 
+ramp-foreground = ${colors.grey}
+
+[module/date]
+type     = internal/date
+interval = 30
+date     = "%d.%A"
+time     = %H:%M
+label    = %date% %time%

@@ -1,0 +1,45 @@
+#!/bin/python
+from os import listdir as DIR
+from os import getcwd as CWD
+from time import sleep as SLP
+from pymediainfo import MediaInfo as MEFO
+from shutil import move as MOV
+
+path   = '/home/rob/Downloads/'
+tracks = [f for f in DIR(path) if f.endswith('.mp3')]
+SLP(0.3)
+
+def getMEFO(track):
+	a = 0
+	parseTrack = MEFO.parse(track)
+	for t in parseTrack.general_tracks:
+		getName = t.track_name
+		getInName = t.file_name
+		getTime = t.other_duration[3]
+	if getName == 'None':
+		a = 1
+		returnName = getInName[:-2]+' '+getTime[:-4]+'.mp3'
+		return returnName
+	if a < 1:
+		returnName = getName+' '+getTime[:-4]+'.mp3'
+		return returnName
+
+for i in tracks:
+	newOutputName = getMEFO(i)
+	SLP(0.3)
+	MOV(i,path+newOutputName)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
