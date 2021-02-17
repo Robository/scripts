@@ -1,0 +1,24 @@
+#!/bin/python
+from hwmon import Hwmon
+from time import sleep
+sensors = Hwmon.HW()
+
+
+while True:
+	sleep(10)
+
+	temp = sensors.data()
+	
+	print(temp['coretemp']['Package id 0'])
+
+
+
+
+
+
+
+
+
+
+
+

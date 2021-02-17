@@ -1,0 +1,73 @@
+#!/bin/python
+from os import listdir as DIR
+from os import getcwd as CWD
+from os.path import join as JOIN
+from time import sleep as SLP
+from pymediainfo import MediaInfo as MEFO
+from shutil import move as MOV
+
+cwdpath = CWD()
+print('You are here: '+cwdpath+'\n')
+#path   = '/home/rob/Templates'
+tracks = [f for f in DIR(cwdpath) if f.endswith('.mp3')]
+print('Fetching files ...')
+print(*tracks, sep = "\n")
+print('')
+inputName = input('Track name if not available: ')
+SLP(0.2)
+c = 0
+def getMEFO(track):
+	a = 0
+	parseTrack = MEFO.parse(track)
+	for t in parseTrack.general_tracks:
+		getInName = t.file_name
+		print('Original file: '+str(getInName))
+		getName = t.track_name
+		print('Title name: '+str(getName))
+		getTime = t.other_duration[3]
+		print('Track duration: '+str(getTime))
+		convName = str(getName)
+		print(' ')
+	if convName == 'None':
+		a = 1
+		returnName = inputName+' '+str(c)+' '+getTime[:-4]+'.mp3'
+		#returnName = getInName[:-2]+' '+getTime[:-4]+'.mp3'
+		print(inputName+' will be used!\nChanging track name: ')
+		print(getInName+' > '+returnName)
+		print(' ')
+		return returnName
+	if a < 1:
+		newName = getName+' '+getTime[:-4]+'.mp3'
+		#changeName = newName.replace(':','-')
+		returnName= newName.replace('/',' ')
+		print('Title found!\nChanging track name: ')
+		print(getName+' > '+returnName)
+		print(' ')
+		return returnName
+
+for i in tracks:
+	c = c + 1
+	newOutputName = getMEFO(i)
+	print('Renaming track ...')
+	print(i+' > '+newOutputName)
+	
+	MOV(i,newOutputName)
+	#REN(i,newOutputName)
+	print('job done ...')
+	print(' ')
+	SLP(0.3)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
