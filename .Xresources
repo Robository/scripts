@@ -1,0 +1,45 @@
+urxvt.perl-ext:
+urxvt.perl-ext-common:
+urxvt.font:xft:DejaVu Sans Mono Nerd Font Mono:size=13
+urxvt.scrollBar: 0
+urxvt.cursorBlink: 1
+urxvt.cursorColor: #657b83
+urxvt.pointerBlank: 1
+
+urxvt.background: #ffffff
+urxvt.foreground: #000000
+
+urxvt.keysym.Shift-Left: \033[1;5D
+urxvt.keysym.Shift-Right: \033[1;5C
+
+urxvt.keysym.C-9: command:\033]11;black\007\033]10;white\007
+
+urxvt.keysym.C-0: command:\033]11;white\007\033]10;black\007
+
+!! black
+*.color0: #263640
+*.color8: #4a697d
+!! red
+*.color1: #d12f2c
+*.color9: #fa3935
+!! green
+*.color2: #00ff00
+*.color10:#00ff00
+!! yellow
+*.color3: #b58900
+*.color11:#657b83
+!! blue
+*color4: #268bd2
+*color12:#839496
+!! magenta 
+*color5: #d33682
+*color13:#6c71c4
+!! cyan
+*color6: #2aa198
+*color14:#93a1a1
+!! white
+*color7: #eee8d5
+*color15:#fdf6e3
+
+
+
