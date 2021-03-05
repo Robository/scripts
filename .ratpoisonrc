@@ -1,0 +1,32 @@
+exec xsetroot -cursor_name left_ptr
+set startup_message off
+
+escape C-d
+
+# Make a screenshot
+#alias sshot exec import -window root ~/screenshot-$(date +%F).jpg
+#definekey top M-C-Print sshot
+
+
+exec /usr/bin/rpws init 3 -k
+
+#bind M-1 exec rpws 1
+#bind M-2 exec rpws 2
+#bind M-3 exec rpws 3
+
+definekey top M-1 exec rpws 1
+definekey top M-2 exec rpws 2
+definekey top M-3 exec rpws 3
+
+#switch between windows
+definekey top M-x next
+definekey top M-y prev
+
+#apps
+unbind c
+bind c exec urxvt
+bind o exec urxvtd -f cent
+#bind c exec aterm
+
+#bind g exec gftp
+bind f exec firefox
