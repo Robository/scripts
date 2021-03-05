@@ -1,0 +1,36 @@
+general {
+	colors = true
+	interval = 5
+}
+
+order += "cpu_usage"
+order += "cpu_temperature 0"
+order += "memory"
+order += "disk /"
+order += "tztime local"
+
+memory {
+	format = " %used | %available "
+	threshold_degraded = "1G"
+	format_degraded = "MEMORY < %available "
+}
+
+disk "/" {
+	format = " %avail "
+}
+
+tztime local {
+	format = " %d. %A %H:%M"
+}
+
+cpu_temperature 0 {
+        format = " %degrees °C "
+        path = "/sys/devices/platform/coretemp.0/hwmon/hwmon0/temp1_input"
+}
+
+cpu_usage {
+	format = " %usage "
+}
+
+
+
