@@ -3,26 +3,26 @@ urxvt.perl-ext-common:
 urxvt.font:xft:DejaVu Sans Mono Nerd Font Mono:size=13
 urxvt.scrollBar: 0
 urxvt.cursorBlink: 1
-urxvt.cursorColor: #657b83
+urxvt.cursorColor: #ffffff
 urxvt.pointerBlank: 1
 
 !!urxvt.depth: 32
 !!urxvt.background: [73]#000000
-urxvt.shading: 27
-urxvt.blurRadius: 0
+!!urxvt.shading: 27
+!!urxvt.blurRadius: 0
 
-urxvt.background: #ffffff
-urxvt.foreground: #000000
+urxvt.background: #202020
+urxvt.foreground: #ffffff
 
 urxvt.keysym.Shift-Left: \033[1;5D
 urxvt.keysym.Shift-Right: \033[1;5C
 
-urxvt.keysym.C-9: command:\033]11;black\007\033]10;white\007
+urxvt.keysym.C-9: command:\033]11;#202020\007\033]10;white\007
 urxvt.keysym.C-0: command:\033]11;white\007\033]10;black\007
 
 !! black
-*.color0: #263640
-*.color8: #4a697d
+*.color0: #000000
+*.color8: #ffffff
 !! red
 *.color1: #d12f2c
 *.color9: #fa3935
