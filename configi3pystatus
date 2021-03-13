@@ -1,0 +1,79 @@
+py3status {
+   align = 'left'
+   markup = 'pango'
+   min_width = 20
+   separator = False
+   separator_block_width = 4
+
+   background = '#0087af'
+
+   border = '#5fafd7'
+   border_bottom = 1
+   border_left = 1
+   border_right = 1
+   border_top = 1
+
+   #min_length = 15
+   position = 'center'
+}
+
+order += "volume_status"
+order += "window"
+order += "keyboard_layout" 
+order += "netdata"
+order += "nvidia_smi"
+order += "sysdata"
+order += "diskdata"
+#order += "clock"
+
+#clock {
+#    format = "  {Local}"
+#    format_time = "%d, %A  %H:%M:%S "
+#}
+
+
+volume_status {
+    blocks = "_▁▂▃▄▅▆▇█"
+    format = " 墳 {percentage} {icon} "
+    format_muted = " 婢 muted "
+    color_muted = "#FFB404"
+    thresholds = [
+        (0, "#eeeeee"),
+        (80, "#FFB404")
+    ]
+}
+
+sysdata {
+    format = "CPU:  {cpu_freq_avg} {cpu_freq_unit}  {cpu_used_percent}  {cpu_temp} 糖 MEM:  {mem_used} {mem_used_unit}, {mem_total} {mem_total_unit} "
+}
+
+window {
+    format = " {title}|♥ "
+}
+
+diskdata {
+    disk = None
+    format = " {free}, {used}, {total_space} "
+}
+
+keyboard_layout {
+    layouts = ['de', 'gr']
+    format = "  {layout} "
+    button_next = 1
+    button_prev = 3
+}
+
+netdata {
+    format = " {nic} [\?color=down LAN(Kb): {down}↓ {up}↑] ‘ ‘[\?color=total T(Mb): {download}↓ {upload}↑ {total}↕] "
+}
+
+nvidia_smi {
+    format_gpu = " GPU:  [\?color=temperature.gpu {temperature.gpu} 糖] "
+}
+
+
+
+
+
+
+
