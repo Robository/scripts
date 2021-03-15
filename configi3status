@@ -1,6 +1,7 @@
 general {
 	colors = true
 	interval = 5
+	separator = ""
 }
 
 order += "cpu_usage"
@@ -20,11 +21,11 @@ disk "/" {
 }
 
 tztime local {
-	format = " %d. %A %H:%M|"
+	format = " %d. %A %H:%M "
 }
 
 cpu_temperature 0 {
-        format = " %degrees 糖"
+        format = " %degrees 糖 "
         path = "/sys/devices/platform/coretemp.0/hwmon/hwmon0/temp1_input"
 }
 
