@@ -26,28 +26,28 @@ bindsym $mod+Shift+space floating toggle
 #-option 'grp:alt_ctr:_toggle'
 
 for_window [class="^.*"] border pixel 0
-gaps outer 20
-gaps inner 10
+#gaps outer 20
+#gaps inner 10
 
 bindsym $mod+m bar mode toggle
 
 bar {
     status_command    i3status
     position          top
-    i3bar_command i3bar --transparency	
-#mode              hide
+    i3bar_command i3bar #--transparency	
+    #mode              hide
     workspace_buttons yes
     tray_output       none
     
-    font pango:DejaVu Sans Mono Nerd Font Mono 10
+    font pango:DejaVu Sans Mono Nerd Font Mono 12
 
     colors {
-        background #00000000
-        statusline #ffffff
+        background #181818
+        statusline #888888
 
-        focused_workspace  #ffffff #285577
-        active_workspace   #ffffff #333333
-        inactive_workspace #888888 #222222
+        focused_workspace  #202020 #181818 #eeeeee
+        active_workspace   #202020 #181818 #eeeeee
+        inactive_workspace #202020 #181818 #eeeeee
         urgent_workspace   #ffffff #900000
     }
 }
@@ -70,3 +70,12 @@ bindsym $mod+Shift+5 move container to workspace number "5"
 # client.urgent           0      0       0    0
 # client.placeholder      0      0       0    0
 
+mode "resize" {
+        bindsym Left        resize shrink width 1 px or 1 ppt
+        bindsym Down        resize grow height 1 px or 1 ppt
+        bindsym Up          resize shrink height 1 px or 1 ppt
+        bindsym Right       resize grow width 1 px or 1 ppt
+        bindsym Mod1+r mode "default"
+}
+
+bindsym Mod1+r mode "resize"
