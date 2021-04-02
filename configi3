@@ -34,7 +34,8 @@ bindsym $mod+m bar mode toggle
 bar {
     status_command    i3status
     position          top
-    i3bar_command i3bar #--transparency	
+    i3bar_command i3bar
+    #i3bar_command i3bar --transparency	
     #mode              hide
     workspace_buttons yes
     tray_output       none
