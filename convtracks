@@ -1,0 +1,21 @@
+#!/bin/python
+from os import listdir 
+from os import system
+from os import getcwd as cwd
+from time import sleep
+
+c = 0
+
+path = cwd()
+print('Path is: '+path+'\n')
+tracks = [f for f in listdir(path)]
+print(*tracks, sep = '\n')
+print('')
+
+for i in tracks:
+	c = c + 1
+	output = "track"+str(c)+".ogg"
+	input = path+"/"+i
+	system(f'ffmpeg -i "{input}" -vn -ar 22050 -ac 1 {output}')	
+	sleep(1)
+
