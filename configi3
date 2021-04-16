@@ -32,6 +32,7 @@ for_window [class="^.*"] border pixel 0
 bindsym $mod+m bar mode toggle
 
 bar {
+    output primary
     status_command    i3status
     position          top
     i3bar_command i3bar
@@ -76,6 +77,10 @@ mode "resize" {
         bindsym Down        resize grow height 1 px or 1 ppt
         bindsym Up          resize shrink height 1 px or 1 ppt
         bindsym Right       resize grow width 1 px or 1 ppt
+        bindsym j        resize shrink width 20 px or 20 ppt
+        bindsym k        resize grow height 20 px or 20 ppt
+        bindsym i          resize shrink height 20 px or 20 ppt
+        bindsym l       resize grow width 20 px or 20 ppt        
         bindsym Mod1+r mode "default"
 }
 
