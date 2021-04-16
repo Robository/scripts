@@ -54,16 +54,29 @@ bar {
     }
 }
 
-bindsym $mod+1 workspace number "1"
-bindsym $mod+2 workspace number "2"
-bindsym $mod+3 workspace number "3"
-bindsym $mod+4 workspace number "4"
-bindsym $mod+5 workspace number "5"
-bindsym $mod+Shift+1 move container to workspace number "1"
-bindsym $mod+Shift+2 move container to workspace number "2"
-bindsym $mod+Shift+3 move container to workspace number "3"
-bindsym $mod+Shift+4 move container to workspace number "4"
-bindsym $mod+Shift+5 move container to workspace number "5"
+workspace number "1:Terminal  " output DVI-D-0
+workspace number "2:Internet  " output DVI-D-0
+workspace number "3:Filemanager  " output DVI-D-0
+workspace number "4:Gaming  " output DVI-D-0
+workspace number "5:Miscellaneous  " output DVI-D-0
+workspace number "6:Empty  " output DVI-D-0
+workspace number "7:Second Monitor  " output VGA-0
+
+bindsym $mod+1 workspace number "1:Terminal  "
+bindsym $mod+2 workspace number "2:Internet  "
+bindsym $mod+3 workspace number "3:Filemanager  "
+bindsym $mod+4 workspace number "4:Gaming  "
+bindsym $mod+5 workspace number "5:Miscellaneous  "
+bindsym $mod+5 workspace number "6:Empty  "
+bindsym $mod+5 workspace number "7:Second Monitor  "
+
+bindsym $mod+Shift+1 move container to workspace number "1:Terminal  "
+bindsym $mod+Shift+2 move container to workspace number "2:Internet  "
+bindsym $mod+Shift+3 move container to workspace number "3:Filemanager  "
+bindsym $mod+Shift+4 move container to workspace number "4:Gaming  "
+bindsym $mod+Shift+5 move container to workspace number "5:Miscellaneous  "
+bindsym $mod+Shift+5 move container to workspace number "6:Empty  "
+bindsym $mod+Shift+5 move container to workspace number "7:Second Monitor  "
 
 # Border Color            border backgr. text indicator
 # client.focused          0      0       0    0 
