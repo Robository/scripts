@@ -51,9 +51,9 @@ bar {
         background #181818
         statusline #888888
 
-        focused_workspace  #202020 #181818 #eeeeee
-        active_workspace   #202020 #181818 #eeeeee
-        inactive_workspace #202020 #181818 #eeeeee
+        focused_workspace  #181818 #181818 #eeeeee
+        active_workspace   #181818 #181818 #eeeeee
+        inactive_workspace #181818 #181818 #888888
         urgent_workspace   #ffffff #900000
     }
 }
