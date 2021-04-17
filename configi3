@@ -58,32 +58,41 @@ bar {
     }
 }
 
-workspace number "1:alpha α " output DVI-D-0
-workspace number "2:beta β " output DVI-D-0
-workspace number "3:gamma γ " output DVI-D-0
-workspace number "4:delta Δ " output DVI-D-0
-workspace number "5:sigma Σ " output DVI-D-0
-workspace number "6:psi Ψ " output DVI-D-0
-workspace number "7:pi π " output VGA-0
-workspace number "8:omega Ω " output VGA-0
+set $ws1 "1:alpha α "
+#set $ws2 "2:beta β "
+#set $ws3 "3:gamma γ "
+#set $ws4 "4:delta Δ "
+#set $ws5 "5:sigma Σ "
+#set $ws6 "6:psi Ψ "
+#set $ws7 "7:pi π "
+set $ws8 "8:omega Ω "
 
-bindsym $mod+1 workspace number "1:alpha α "
-bindsym $mod+2 workspace number "2:beta β "
-bindsym $mod+3 workspace number "3:gamma γ "
-bindsym $mod+4 workspace number "4:delta Δ "
-bindsym $mod+5 workspace number "5:sigma Σ "
-bindsym $mod+6 workspace number "6:psi Ψ "
-bindsym $mod+7 workspace number "7:pi π "
-bindsym $mod+8 workspace number "8:omega Ω "
+workspace number $ws1 output DVI-D-0
+#workspace number $ws2 output DVI-D-0
+#workspace number $ws3 output DVI-D-0
+#workspace number $ws4 output DVI-D-0
+#workspace number $ws5 output DVI-D-0
+#workspace number $ws6 output DVI-D-0
+#workspace number $ws7 output VGA-0
+workspace number $ws8 output VGA-0
 
-bindsym $mod+Shift+1 move container to workspace number "1:alpha α "
-bindsym $mod+Shift+2 move container to workspace number "2:beta β "
-bindsym $mod+Shift+3 move container to workspace number "3:gamma γ "
-bindsym $mod+Shift+4 move container to workspace number "4:delta Δ "
-bindsym $mod+Shift+5 move container to workspace number "5:sigma Σ "
-bindsym $mod+Shift+6 move container to workspace number "6:psi Ψ "
-bindsym $mod+Shift+7 move container to workspace number "7:pi π "
-bindsym $mod+Shift+8 move container to workspace number "8:omega Ω "
+bindsym $mod+1 workspace number $ws1
+#bindsym $mod+2 workspace number $ws2
+#bindsym $mod+3 workspace number $ws3
+#bindsym $mod+4 workspace number $ws4
+#bindsym $mod+5 workspace number $ws5
+#bindsym $mod+6 workspace number $ws6
+#bindsym $mod+7 workspace number $ws7
+bindsym $mod+8 workspace number $ws8
+
+bindsym $mod+Shift+1 move container to workspace number $ws1
+#bindsym $mod+Shift+2 move container to workspace number $ws2
+#bindsym $mod+Shift+3 move container to workspace number $ws3
+#bindsym $mod+Shift+4 move container to workspace number $ws4
+#bindsym $mod+Shift+5 move container to workspace number $ws5
+#bindsym $mod+Shift+6 move container to workspace number $ws6
+#bindsym $mod+Shift+7 move container to workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8
 
 # assign [class="firefox"] "2:beta β "
 
