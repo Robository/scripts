@@ -6,29 +6,23 @@ general {
 	color_good = "#888888"	
 }
 
-order += "path_exists cdemu0"
-order += "path_exists cdemu1"
+order += "read_file termin"
 order += "path_exists usb0"
 order += "path_exists usb1"
 #order += "read_file cpuinfo"
 order += "volume master"
 order += "ethernet enp5s0"
-order += "wireless wlan0"
+order += "wireless wlp2s0"
 order += "cpu_usage"
 order += "cpu_temperature 0"
 order += "memory"
 order += "disk /"
 order += "tztime local"
 
-path_exists cdemu0 {
-	path = "/dev/sr0"
-	format = " sr0 inserted "
-	format_down = ""
-}
-path_exists cdemu1 {
-	path = "/dev/sr1"
-	format = " sr1 inserted "
-	format_down = ""
+read_file termin {
+	format = " %content "
+	path = "/home/rob/.config/termin"
+	Max_characters = 25
 }
 
 path_exists usb0 {
@@ -62,7 +56,7 @@ ethernet enp5s0 {
 	format_down = "  no ethernet  "
 }
 
-wireless wlan0 {
+wireless wlp2s0 {
 	format_up = "%quality at %essid, %bitrate / %frequency) %ip "
 	format_down = "no wireless "
 	format_quality = "%03d%s "
@@ -94,6 +88,3 @@ cpu_usage {
 	format_above_threshold = "  %usage  " 
 	format = " %usage "
 }
-
-
-
