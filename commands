@@ -12,3 +12,6 @@ df -B 1 /dev/sda1
 
 # set tmp to /
 systemctl mask tmp.mount
+
+# shared folder
+sudo mount -t vboxsf -o uid=1000,gid=1000 sharename /home/<user>/vboxshare 
