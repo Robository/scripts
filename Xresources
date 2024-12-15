@@ -1,0 +1,50 @@
+urxvt.perl-ext:
+urxvt.perl-ext-common:
+urxvt.font:xft:DejaVu Sans Mono Nerd Font Mono:size=14
+urxvt.scrollBar: 0
+urxvt.cursorBlink: 1
+urxvt.cursorColor: #888888
+urxvt.pointerBlank: 1
+
+!!urxvt.depth: 32
+!!urxvt.background: [73]#000000
+!!urxvt.transparent: 1
+!!urxvt.shading: 27
+!!urxvt.blurRadius: 0
+
+urxvt.background: #202020
+urxvt.foreground: #888888
+
+urxvt.keysym.Shift-Left: \033[1;5D
+urxvt.keysym.Shift-Right: \033[1;5C
+
+urxvt.keysym.C-9: command:\033]11;#202020\007\033]10;#888888\007
+urxvt.keysym.C-0: command:\033]11;#888888\007\033]10;#202020\007
+
+!! black
+*.color0: #202020
+*.color8: #888888
+! red
+*.color1:       #a54242
+*.color9:       #cc6666
+! green
+*.color2:       #8c9440
+*.color10:      #b5bd68
+! yellow
+*.color3:       #de935f
+*.color11:      #f0c674
+! blue
+*.color4:       #5f819d
+*.color12:      #81a2be
+! magenta
+*.color5:       #85678f
+*.color13:      #b294bb
+! cyan
+*.color6:       #5e8d87
+*.color14:      #8abeb7
+!! white
+*color7: #888888
+*color15:#202020
+
+
+
